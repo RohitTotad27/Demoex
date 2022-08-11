@@ -1,0 +1,37 @@
+package com.ex.demoex.service;
+
+import com.ex.demoex.models.Location;
+import com.ex.demoex.models.Posts;
+import com.ex.demoex.models.User;
+import org.springframework.stereotype.Service;
+
+import java.util.Arrays;
+import java.util.List;
+
+@Service
+public class PostsService {
+
+    User user1 = new User(
+            "u2",
+            "Rohit",
+            "Totad",
+            new Location("l2", "Bengaluru"),
+            "rohittotad2745@gmail.com");
+
+    Posts post1 = new Posts(
+            "p1",
+            "01-Jan-19",
+            user1,
+            "Its good to love and be loved");
+
+     private List<Posts> posts = Arrays.asList(post1);
+
+         public List<Posts> getPosts(){
+
+             return posts;
+         }
+
+
+
+
+}

@@ -14,7 +14,7 @@ import org.springframework.data.annotation.Id;
 @AllArgsConstructor
 @NoArgsConstructor
 
-public class User {
+public class User extends Posts {
 
     @Id
     private String id;

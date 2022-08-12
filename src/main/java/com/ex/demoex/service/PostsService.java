@@ -5,6 +5,7 @@ import com.ex.demoex.models.Posts;
 import com.ex.demoex.models.User;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -24,7 +25,7 @@ public class PostsService {
             user1,
             "Its good to love and be loved");
 
-     private List<Posts> posts = Arrays.asList(post1);
+     private List<Posts> posts = new ArrayList<>(Arrays.asList(post1));
 
          public List<Posts> getPosts(){
 
@@ -43,5 +44,8 @@ public class PostsService {
          }
 
 
+    public void addPosts(Posts post) {
 
+             posts.add(post);
+    }
 }

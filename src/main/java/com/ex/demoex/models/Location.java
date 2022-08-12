@@ -8,12 +8,13 @@ import org.springframework.data.annotation.Id;
 
 @Setter
 @Getter
-@NoArgsConstructor
+//@NoArgsConstructor
 @AllArgsConstructor
 public class Location {
 
-    @Id
+//    @Id
     private String id;
     private String name;
+
 
 }

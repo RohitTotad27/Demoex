@@ -4,9 +4,7 @@ package com.ex.demoex.controller;
 import com.ex.demoex.models.Location;
 import com.ex.demoex.service.LocationService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -14,18 +12,23 @@ import java.util.List;
 public class LocationsController {
 
     @Autowired
-    LocationService location;
+    LocationService locationService;
 
     @RequestMapping(value = "/locations")
     public List<Location> getAllLocations()
     {
-        return location.getLocationList();
+        return locationService.getLocationList();
     }
 
     @RequestMapping("/locations/{id}")           //http://localhost:8080/post/p1 **USE p1 --> Post ID and not User Id**
     public Location getLocation(@PathVariable("id")String id){
 
-        return location.getLocation(id);
+        return locationService.getLocation(id);
+    }
+
+    @RequestMapping(method= RequestMethod.POST, value="/locations")
+    public void addLocation(@RequestBody Location location) {
+        locationService.addLocation(location);
     }
 
 }

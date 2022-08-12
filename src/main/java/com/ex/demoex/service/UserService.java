@@ -5,6 +5,7 @@ import com.ex.demoex.models.User;
 import lombok.Setter;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -25,7 +26,7 @@ public class UserService {
             new Location("l2", "Asaba"),
             "Jadon@gmail.com");
 
-    private List<User> users = Arrays.asList(user1, user2);
+    private List<User> users = new ArrayList<>(Arrays.asList(user1, user2));
     public List<User> getAllUsers() {
 
         return users;
@@ -38,6 +39,10 @@ public class UserService {
                 .orElse(null);
 
         return user;
+    }
+
+    public void addUsers(User user){
+        users.add(user);
     }
 
 }

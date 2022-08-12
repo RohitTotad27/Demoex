@@ -22,7 +22,7 @@ public class LocationsController {
         return location.getLocationList();
     }
 
-    @RequestMapping("/locations/{id}")           //http://localhost:8080/post/p1 **USE p1 --> Post ID and not User Id**
+    @RequestMapping("/locations/{id}")           //http://localhost:8080/locations/l1 **USE l1 --> location ID**
     public Location getLocation(@PathVariable("id")String id){
 
         return location.getLocation(id);

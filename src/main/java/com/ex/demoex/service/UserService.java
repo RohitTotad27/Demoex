@@ -30,4 +30,14 @@ public class UserService {
 
         return users;
     }
+
+    public User getUser(String id){
+        User user = users.stream()
+                .filter(t->id.equals(t.getId()))
+                .findFirst()
+                .orElse(null);
+
+        return user;
+    }
+
 }

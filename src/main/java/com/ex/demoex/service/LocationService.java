@@ -20,4 +20,13 @@ public class LocationService {
                 return locationList;
             }
 
+    public Location getLocation(String id) {
+        Location location = locationList.stream()
+                .filter(t -> id.equals(t.getId()))
+                .findFirst()
+                .orElse(null);
+
+        return location;
+    }
+
 }

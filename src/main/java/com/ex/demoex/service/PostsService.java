@@ -32,6 +32,16 @@ public class PostsService {
          }
 
 
+         public Posts getPosts(String id){
+
+             Posts post = posts.stream()
+                     .filter(t->id.equals(t.getId()))
+                     .findFirst()
+                     .orElse(null);
+
+            return post;
+         }
+
 
 
 }
